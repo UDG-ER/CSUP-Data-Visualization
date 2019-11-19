@@ -1,4 +1,4 @@
-# CSUP-Mobile-Application
+# CSUP-Data-Visualization
 
 Put here one line about your project.
 
