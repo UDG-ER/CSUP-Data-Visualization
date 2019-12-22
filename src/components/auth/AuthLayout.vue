@@ -16,7 +16,7 @@
           center
         >
           <va-tab>{{ $t('auth.login') }}</va-tab>
-          <va-tab>{{ $t('auth.createNewAccount') }}</va-tab>
+          <!-- <va-tab>{{ $t('auth.createNewAccount') }}</va-tab> -->
         </va-tabs>
 
         <va-separator/>

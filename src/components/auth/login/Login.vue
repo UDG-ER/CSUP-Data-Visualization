@@ -30,11 +30,13 @@
 </template>
 
 <script>
+import config from '../../../config.json'
+
 export default {
   name: "login",
   data() {
     return {
-      api_url: "http://azure.dunavnet.eu/agronetAPIv2",
+      api_url: config.api_url,
       username: "",
       password: "",
       keepLoggedIn: false,
@@ -63,7 +65,7 @@ export default {
         const result = await response.json();
         //this.token = result.Token;
         localStorage.setItem("jwt", result.Token);
-        alert('token postavljen')
+        localStorage.setItem("username", username);
       } catch (error) {
         console.log("Error with getting token:" + error);
       }
@@ -76,8 +78,7 @@ export default {
         return;
       }
       await this.authorize(this.username, this.password)
-      alert('dobio odgovor, idi na dashboard')
-      this.$router.push({ name: "dashboard" });
+      this.$router.push({ name: "devices" });
     }
   }
 };

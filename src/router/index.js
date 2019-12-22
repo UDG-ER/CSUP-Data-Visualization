@@ -407,9 +407,9 @@ let router = new Router({
       component: AppLayout,
       children: [
         {
-          name: 'dashboard',
-          path: 'dashboard',
-          component: () => import('../components/dashboard/Dashboard.vue'),
+          name: 'devices',
+          path: 'devices',
+          component: () => import('../components/devices/Devices.vue'),
           default: true,
         },
       ],
@@ -423,16 +423,12 @@ let router = new Router({
 router.beforeEach((to, from, next) => {
   if(to.matched.some(record => record.meta.requiresAuth)) {
     if (localStorage.getItem('jwt') == null) {
-      alert('ne moze da prodje')
       next({
           path: '/auth/login',
           params: { nextUrl: to.fullPath }
       })
     }
     else {
-      alert('moze da prodje na')
-      alert(to)
-      console.log(to)
       next() 
     }
   } else {

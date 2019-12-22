@@ -15,12 +15,11 @@
         :name="`fa ${isShown ? 'fa-angle-up' :'fa-angle-down'}`"
       />
     </span>
-    <div class="profile-dropdown__content pl-4 pr-4 pt-2 pb-2">
+    <div @click="logout" class="profile-dropdown__content pl-4 pr-4 pt-2 pb-2">
       <router-link
         v-for="option in options"
         :key="option.name"
         :to="{name: option.redirectTo}"
-        v-on:click="logout"
         class="profile-dropdown__item pt-1 pb-1 mt-2 mb-2"
       >
         {{ $t(`user.${option.name}`) }}
@@ -42,10 +41,6 @@ export default {
       type: Array,
       default: () => [
         {
-          name: 'profile',
-          redirectTo: '',
-        },
-        {
           name: 'logout',
           redirectTo: 'login',
         },
@@ -54,7 +49,6 @@ export default {
   },
   methods: {
     logout: function() {
-      alert('logoutuj')
       localStorage.removeItem('jwt');
     }
   }

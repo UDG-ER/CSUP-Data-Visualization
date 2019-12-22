@@ -1,0 +1,17 @@
+.placeholder {
+    padding: 15px;
+
+    &.small {
+        margin: 10px 0px;
+    }
+    &.medium {
+        margin: 20px 0px;
+    }
+    &.large {
+        margin: 30px 0px;
+    }
+}
+
+.card-device {
+    cursor: pointer;
+}

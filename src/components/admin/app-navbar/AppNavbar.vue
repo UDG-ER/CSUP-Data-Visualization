@@ -1,9 +1,11 @@
 <template>
   <va-navbar class="app-navbar">
     <header-selector slot="selector" :minimized.sync="minimizedProxy"/>
+    <!--
     <template slot="logo">
       <va-icon-vuestic/>
     </template>
+    -->
     <div class="app-navbar__actions row flex-nowrap align--center">
       <!--
       <color-dropdown class="va-navbar__item"/>
@@ -56,7 +58,7 @@ export default {
   },
   data () {
     return {
-      userName: 'Vasili S',
+      userName: localStorage.getItem('username'),
     }
   },
   computed: {
